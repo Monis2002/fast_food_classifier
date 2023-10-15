@@ -97,8 +97,12 @@
 
     <form action="/">
     <div class="result-box">
+        {% if result!="" %}
         <h2>This item you should prefer</h2>
         <h3><u>{{result}}</u></h3>
+        {% else %}
+        <h3><u>{{result}}</u></h3>
+        {% endif %}
         <input type="submit" value="Ok!">
     </div>
     </form>
