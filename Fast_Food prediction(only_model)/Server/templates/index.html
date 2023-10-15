@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('/static/img/background.png'); /* Add your background image URL */
+            background-size: cover;
+            background-position: center; /* Center the background image */
+        }
+
+        h1 {
+            color: #fff; /* Change the title color for better visibility */
+            background-color: #333; /* Add a background color to make the title stand out */
+            padding: 10px; /* Add some padding for the title */
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to make the form stand out */
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto; /* Increase the margin for centering */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #555;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .result-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the result box */
+            border: 2px solid #333;
+            padding: 10px;
+            width: 250px;
+            margin: 20px auto; /* Increase the margin for centering */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Nutrition Input Form</h1>
+    <form action="result" method="POST">
+        <label for="calories">Calories:</label>
+        <input type="number" id="calories" name="calories" placeholder="range(60-650)" required>
+
+        <label for="fat">Fat (grams):</label>
+        <input type="number" id="fat" name="fat" placeholder="range(0.5-40)" required>
+
+        <label for="sugar">Sugar (grams):</label>
+        <input type="number" id="sugar" name="sugar" placeholder="range(1-20)"  required>
+
+        <label for="protein">Protein (grams):</label>
+        <input type="number" id="protein" name="protein" placeholder="range(3-500)" required>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="/">
+    <div class="result-box">
+        <h2>This item you should prefer</h2>
+        <h3><u>{{result}}</u></h3>
+        <input type="submit" value="Ok!">
+    </div>
+    </form>
+</body>
+</html>
